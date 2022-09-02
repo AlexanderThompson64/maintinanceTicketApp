@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <nav
-        className="navbar navbar-dark fixed-top"
-        style={{ backgroundColor: "#005C47" }}
+        className="navbar navbar-dark"
+        style={{ backgroundColor: "#002F24" }}
       >
         <div className="container-fluid">
           <a className="navbar-brand ms-4" href="/">
@@ -25,11 +25,11 @@ const Navbar = () => {
             tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
-            style={{ backgroundColor: "#005C47", width: "80%" }}
+            style={{ backgroundColor: "#002F24", width: "80%" }}
           >
             <div
               className="offcanvas-header"
-              style={{ backgroundColor: "#005C47" }}
+              style={{ backgroundColor: "#002F24" }}
             >
               <div className="container">
                 <div className="row justify-content-end">
@@ -58,7 +58,7 @@ const Navbar = () => {
 
             <div
               className="offcanvas-body lead"
-              style={{ backgroundColor: "#005C47", fontFamily: "anak" }}
+              style={{ backgroundColor: "#002F24", fontFamily: "anak" }}
             >
               <ul
                 className="navbar-nav justify-content-end text-center flex-grow-1"

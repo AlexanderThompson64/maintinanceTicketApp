@@ -1,13 +1,132 @@
+@font-face {
+  font-family: anak;
+  src: url(/src/assets/fonts/Anek_Malayalam/static/AnekMalayalam/AnekMalayalam-Regular.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Styling for Navbar component with media queries */
+/* Navbar Styling Start */
+
+.navbar-brand {
+  font-size: 35px;
+}
+
+.offcanvas-title {
+  font-size: 45px;
+}
+
+.offcanvas-body {
+  font-size: 28px;
+}
+
+@media screen and (min-width: 700px) {
+  .offcanvas {
+    width: 50% !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .offcanvas-title {
+    font-size: 70px !important;
+  }
+
+  .offcanvas-body {
+    font-size: 40px !important;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .offcanvas {
+    width: 30% !important;
+  }
+
+  .offcanvas-body {
+    font-size: 28px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .offcanvas {
+    width: 30% !important;
+  }
+
+  .offcanvas-body {
+    font-size: 35px !important;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .offcanvas {
+    width: 20% !important;
+  }
+
+  .offcanvas-body {
+    font-size: 35px !important;
+  }
+}
+  
+
+
+@media screen and (min-height: 600px) {
+  .offcanvas-body {
+    margin-top: 50px !important;
+  }
+}
+
+@media screen and (min-height: 700px) {
+  .offcanvas-title {
+    font-size: 55px;
+  }
+  .offcanvas-body {
+    font-size: 32px;
+    margin-top: 50px !important;
+  }
+}
+
+@media screen and (min-height: 700px) and (min-width: 400px) {
+  .offcanvas-title {
+    font-size: 55px;
+  }
+  .offcanvas-body {
+    font-size: 34px;
+    margin-top: 60px !important;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .offcanvas-title {
+    margin-top: 60px;
+    font-size: 55px;
+  }
+  .offcanvas-body {
+    font-size: 32px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-height: 1240px) {
+  .offcanvas-title {
+    margin-top: 120px;
+    font-size: 55px;
+  }
+  .offcanvas-body {
+    font-size: 32px;
+    margin-top: 80px;
+  }
+}
+
+/* Navbar Component Styling End */

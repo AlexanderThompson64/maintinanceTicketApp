@@ -1,17 +1,15 @@
+import Spacer from "../components/Spacer";
+
 const Navbar = () => {
   return (
     <div className="Navbar">
       <nav
         className="navbar navbar-dark fixed-top"
-        style={{ backgroundColor: "#0b192e" }}
+        style={{ backgroundColor: "#005C47" }}
       >
         <div className="container-fluid">
-          <a
-            className="navbar-brand ms-4"
-            style={{ fontFamily: "Dancing" }}
-            href="/"
-          >
-            A.Thompson
+          <a className="navbar-brand ms-4" href="/">
+            Park Maintinance Application
           </a>
           <button
             className="navbar-toggler me-4"
@@ -27,11 +25,11 @@ const Navbar = () => {
             tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
-            style={{ backgroundColor: "#0B192E", width: "80%" }}
+            style={{ backgroundColor: "#005C47", width: "80%" }}
           >
             <div
               className="offcanvas-header"
-              style={{ backgroundColor: "#0b192e" }}
+              style={{ backgroundColor: "#005C47" }}
             >
               <div className="container">
                 <div className="row justify-content-end">
@@ -47,10 +45,10 @@ const Navbar = () => {
                     <a href="/" style={{ textDecoration: "none" }}>
                       <h5
                         className="offcanvas-title"
-                        style={{ color: "whitesmoke", fontFamily: "Dancing" }}
+                        style={{ color: "whitesmoke" }}
                         id="offcanvasNavbarLabel"
                       >
-                        A.Thompson
+                        Park Maintinance App
                       </h5>
                     </a>
                   </div>
@@ -60,9 +58,17 @@ const Navbar = () => {
 
             <div
               className="offcanvas-body lead"
-              style={{ backgroundColor: "#0b192e", fontFamily: "anak" }}
+              style={{ backgroundColor: "#005C47", fontFamily: "anak" }}
             >
-              <ul className="navbar-nav justify-content-end text-center flex-grow-1"></ul>
+              <ul
+                className="navbar-nav justify-content-end text-center flex-grow-1"
+                style={{ color: "whitesmoke" }}
+              >
+                <div className="container d-flex flex-column align-items-center">
+                  <li className="btn btn-primary w-50 mb-5">Raise Ticket</li>
+                  <li className="btn btn-light w-50">View tickets</li>
+                </div>
+              </ul>
             </div>
           </div>
         </div>

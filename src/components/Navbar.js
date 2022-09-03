@@ -11,15 +11,11 @@ const Navbar = () => {
           <a className="navbar-brand ms-4" href="/">
             Park Maintinance Application
           </a>
-          <button
-            className="navbar-toggler me-4"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <div class="navbar-nav me-3" style={{fontSize: "28px"}}>
+            <a class="nav-link" href="#">
+              Login
+            </a>
+          </div>
           <div
             className="offcanvas offcanvas-end"
             tabIndex="-1"

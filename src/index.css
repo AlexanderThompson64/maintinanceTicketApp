@@ -33,101 +33,61 @@ code {
   font-size: 28px;
 }
 
-@media screen and (min-width: 700px) {
-  .offcanvas {
+@media screen and (max-width: 450px) {
+  .navbar-brand {
+    font-size: 20px;
+    margin-left: 0 !important;
+  }
+  .nav-link {
+    font-size: 20px;
+  }
+  
+}
+/* Navbar Component Styling End */
+
+/* Intro Component Styling Start */
+
+.Intro {
+  background-image: url(./img/parkImg.png);
+}
+
+@media screen and (min-width: 300px) {
+  #projectCard {
+    margin-top: -100px !important;
+    
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #projectCard {
     width: 50% !important;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .offcanvas-title {
-    font-size: 70px !important;
-  }
-
-  .offcanvas-body {
-    font-size: 40px !important;
+@media screen and (min-width: 1000px) {
+  #projectCard {
+    width: 100% !important;
+    margin-top: 0 !important;
   }
 }
 
-@media screen and (min-width: 1500px) {
-  .offcanvas {
-    width: 30% !important;
-  }
 
-  .offcanvas-body {
-    font-size: 28px !important;
-    margin-bottom: 20px !important;
+/* Intro Component Styling End */
+
+/* Admin Component Styling Start  */
+
+@media screen and (min-width: 750px) {
+  #projectCardAdmin {
+    width: 50% !important;
   }
 }
 
-@media screen and (min-width: 1900px) {
-  .offcanvas {
-    width: 30% !important;
-  }
-
-  .offcanvas-body {
-    font-size: 35px !important;
+@media screen and (min-width: 1000px) {
+  #projectCardAdmin {
+    width: 100% !important;
+    margin-top: 0 !important;
   }
 }
 
-@media screen and (min-width: 2500px) {
-  .offcanvas {
-    width: 20% !important;
-  }
 
-  .offcanvas-body {
-    font-size: 35px !important;
-  }
-}
-  
-
-
-@media screen and (min-height: 600px) {
-  .offcanvas-body {
-    margin-top: 50px !important;
-  }
-}
-
-@media screen and (min-height: 700px) {
-  .offcanvas-title {
-    font-size: 55px;
-  }
-  .offcanvas-body {
-    font-size: 32px;
-    margin-top: 50px !important;
-  }
-}
-
-@media screen and (min-height: 700px) and (min-width: 400px) {
-  .offcanvas-title {
-    font-size: 55px;
-  }
-  .offcanvas-body {
-    font-size: 34px;
-    margin-top: 60px !important;
-  }
-}
-
-@media screen and (min-height: 1000px) {
-  .offcanvas-title {
-    margin-top: 60px;
-    font-size: 55px;
-  }
-  .offcanvas-body {
-    font-size: 32px;
-    margin-top: 80px;
-  }
-}
-
-@media screen and (min-height: 1240px) {
-  .offcanvas-title {
-    margin-top: 120px;
-    font-size: 55px;
-  }
-  .offcanvas-body {
-    font-size: 32px;
-    margin-top: 80px;
-  }
-}
-
-/* Navbar Component Styling End */
+/* Admin Component Styling End  */

@@ -1,14 +1,17 @@
 import Navbar from "../components/Navbar";
 import Intro from "../components/Intro";
 import Spacer from "../components/Spacer";
+import AdminLogin from "../components/AdminLogin";
 
 const Home = () => {
-    return ( <div className="Home" style={{fontFamily: "anak"}}>
-            <Navbar/>
-            <Spacer/>
-            <Spacer/>
-            <Intro/>
-    </div> );
-}
- 
+  return (
+    <div className="Home" style={{ fontFamily: "anak" }}>
+      <Navbar />
+      <Intro />
+      <AdminLogin/>
+      <Spacer/>
+    </div>
+  );
+};
+
 export default Home;

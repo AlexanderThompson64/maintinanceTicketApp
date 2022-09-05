@@ -42,7 +42,7 @@ const Intro = () => {
             </p>
             <div className="container d-flex justify-content-center">
               <a
-                href="/projects/0"
+                href="/new-ticket"
                 className="projectsBtn btn btn-warning"
                 style={{width: "50%" }}
               >

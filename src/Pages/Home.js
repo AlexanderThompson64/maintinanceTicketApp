@@ -6,7 +6,6 @@ import AdminLogin from "../components/AdminLogin";
 const Home = () => {
   return (
     <div className="Home" style={{ fontFamily: "anak" }}>
-      <Navbar />
       <Intro />
       <AdminLogin/>
       <Spacer/>

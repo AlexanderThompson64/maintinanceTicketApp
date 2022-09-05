@@ -33,7 +33,7 @@ const AdminLogin = () => {
             </p>
             <div className="container d-flex justify-content-center">
               <a
-                href="/projects/0"
+                href="/login"
                 className="projectsBtn btn btn-warning text-dark"
                 style={{ color: "white", width: "50%" }}
               >

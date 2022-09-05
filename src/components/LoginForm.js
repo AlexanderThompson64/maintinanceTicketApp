@@ -39,7 +39,7 @@ const LoginForm = () => {
             Remember me
           </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" style={{width: "200px"}}>
           Submit
         </button>
       </form>

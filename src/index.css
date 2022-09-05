@@ -96,7 +96,11 @@ code {
 /* Pages Styling Start */
 /* NewTicket Styling Start */
 
-
+@media screen and (min-width: 200px) {
+  .NewTicketForm {
+    width: 600px;
+  }
+}
 
 
 /* NewTicket Styling End */

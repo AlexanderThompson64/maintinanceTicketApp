@@ -12,7 +12,7 @@ const Navbar = () => {
             Park Maintinance Application
           </a>
           <div class="navbar-nav me-3" style={{fontSize: "28px"}}>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/login">
               Login
             </a>
           </div>

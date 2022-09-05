@@ -1,34 +1,64 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+
 const NewTicketForm = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div
       className="NewTicketForm container d-flex justify-content-center align-items-center"
       style={{ height: "60%" }}
     >
       <div className="container">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row justify-content-center">
             <div className="mb-3">
               <label for="" className="form-label">
                 Name
               </label>
               <input
+                {...register("name", { required: true })}
                 type="text"
                 className="form-control"
                 id="Name"
                 aria-describedby="nameHelp"
               />
+              {errors.name?.type === "required" && (
+                <p style={{ color: "red" }}>Name required</p>
+              )}
             </div>
             <div className="mb-3">
               <label for="contactNumber" class="form-label">
                 Contact Number
               </label>
-              <input type="text" className="form-control" id="contactNumber" />
+              <input
+                {...register("contactNumber", { required: true })}
+                type="text"
+                className="form-control"
+                id="contactNumber"
+              />
+              {errors.contactNumber?.type === "required" && (
+                <p style={{ color: "red" }}>Contact Number required</p>
+              )}
             </div>
             <div className="mb-3">
               <label for="contactNumber" class="form-label">
                 Park Name
               </label>
-              <input type="text" className="form-control" id="contactNumber" />
+              <input
+                {...register("parkName", { required: true })}
+                type="text"
+                className="form-control"
+                id="contactNumber"
+              />
+              {errors.parkName?.type === "required" && (
+            <p style={{ color: "red" }}>Park Name required</p>
+          )}
             </div>
             <br />
           </div>
@@ -37,11 +67,15 @@ const NewTicketForm = () => {
               Issue
             </label>
             <textarea
+              {...register("issue", { required: true })}
               className="form-control"
               style={{ height: "210px" }}
               id="issue"
               rows="3"
             ></textarea>
+            {errors.issue?.type === "required" && (
+            <p style={{ color: "red" }}>Field cannot be empty!</p>
+          )}
           </div>
           <a
             className="btn btn-danger me-2"

@@ -2,10 +2,10 @@ import Spacer from "../components/Spacer";
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
+    <div className="Navbar fixed-top">
       <nav
         className="navbar navbar-dark"
-        style={{ backgroundColor: "#002F24" }}
+        style={{ backgroundColor: "#002F24"}}
       >
         <div className="container-fluid">
           <a className="navbar-brand ms-4" href="/">

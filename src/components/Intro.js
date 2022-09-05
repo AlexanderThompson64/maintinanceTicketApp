@@ -2,7 +2,7 @@ import parkImg from "../img/parkImg.png";
 
 const Intro = () => {
   return (
-    <div className="Intro text-white" style={{ fontFamily: "anak" }}>
+    <div className="Intro text-white" style={{ fontFamily: "anak"}}>
       <div
         className="row justify-content-center align-items-center"
         style={{ height: "700px" }}

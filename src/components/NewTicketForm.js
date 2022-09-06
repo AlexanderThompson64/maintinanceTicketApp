@@ -8,7 +8,10 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  contactNumber: yup.number().required(),
+  contactNumber: yup
+    .number()
+    .test("len", (val) => val.toString().length === 11)
+    .required(),
   parkName: yup.string().required(),
   issue: yup.string().required(),
 });
@@ -42,6 +45,7 @@ const NewTicketForm = () => {
 
   const submitForm = (data) => {
     console.log(data);
+    createTicket();
   };
 
   return (
@@ -61,13 +65,12 @@ const NewTicketForm = () => {
                 name="name"
                 className="form-control"
                 aria-describedby="nameHelp"
+                {...register("name")}
                 onChange={(event) => {
                   setNewName(event.target.value);
                 }}
-                {...register("name")}
               />
-              {errors.name && <p style={{color: "red"}}>Name is required</p>}
-              
+              {errors.name && <p style={{ color: "red" }}>Name is required</p>}
             </div>
             <div className="mb-3">
               <label htmlFor="contactNumber" className="form-label">
@@ -77,12 +80,16 @@ const NewTicketForm = () => {
                 type="number"
                 name="contactNumber"
                 className="form-control"
+                {...register("contactNumber")}
                 onChange={(event) => {
                   setNewContactNumber(event.target.value);
                 }}
-                {...register("contactNumber")}
               />
-              {errors.contactNumber && <p style={{color: "red"}}>Please enter a valid mobile number</p>}
+              {errors.contactNumber && (
+                <p style={{ color: "red" }}>
+                  Please enter a valid mobile number
+                </p>
+              )}
             </div>
             <div className="mb-3">
               <label htmlFor="contactNumber" className="form-label">
@@ -92,12 +99,14 @@ const NewTicketForm = () => {
                 type="text"
                 name="parkName"
                 className="form-control"
+                {...register("parkName")}
                 onChange={(event) => {
                   setNewParkName(event.target.value);
                 }}
-                {...register("parkName")}
               />
-              {errors.contactNumber && <p style={{color: "red"}}>Please enter park name</p>}
+              {errors.contactNumber && (
+                <p style={{ color: "red" }}>Please enter park name</p>
+              )}
             </div>
             <br />
           </div>
@@ -110,12 +119,14 @@ const NewTicketForm = () => {
               name="issue"
               style={{ height: "210px" }}
               rows="3"
+              {...register("issue")}
               onChange={(event) => {
                 setNewIssue(event.target.value);
               }}
-              {...register("issue")}
             ></textarea>
-            {errors.contactNumber && <p style={{color: "red"}}>Field cannot be empty!</p>}
+            {errors.contactNumber && (
+              <p style={{ color: "red" }}>Field cannot be empty!</p>
+            )}
           </div>
           <a
             className="btn btn-danger me-2"

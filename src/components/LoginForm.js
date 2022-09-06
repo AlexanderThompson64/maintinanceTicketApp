@@ -26,9 +26,7 @@ const LoginForm = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          {errors.email?.type === "required" && (
-            <p style={{ color: "red" }}>Email address required</p>
-          )}
+          {errors.email && <p style={{color: "red"}}>Please enter a valid email</p>}
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
@@ -57,6 +55,7 @@ const LoginForm = () => {
             Remember me
           </label>
         </div>
+        
         <button
           type="submit"
           className="btn btn-primary"
@@ -64,6 +63,9 @@ const LoginForm = () => {
         >
           Submit
         </button>
+        <br />
+        <br />
+        <p>Cant log in? contact IT support <a href="/">here</a></p>
       </form>
     </div>
   );

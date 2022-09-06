@@ -1,8 +1,6 @@
-import parkImg from "../img/parkImg.png";
-
 const Intro = () => {
   return (
-    <div className="Intro text-white" style={{ fontFamily: "anak"}}>
+    <div className="Intro text-white" style={{ fontFamily: "anak" }}>
       <div
         className="row justify-content-center align-items-center"
         style={{ height: "700px" }}
@@ -23,7 +21,8 @@ const Intro = () => {
               height: "300px",
               backgroundColor: "whitesmoke",
               color: "whitesmoke",
-              boxShadow: " 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+              boxShadow:
+                " 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
             }}
           >
             <h1 className="projectTitles" style={{ fontSize: "22px" }}>
@@ -44,7 +43,7 @@ const Intro = () => {
               <a
                 href="/new-ticket"
                 className="projectsBtn btn btn-warning"
-                style={{width: "50%" }}
+                style={{ width: "50%" }}
               >
                 Create Ticket
               </a>

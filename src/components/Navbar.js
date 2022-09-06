@@ -1,4 +1,4 @@
-import Spacer from "../components/Spacer";
+
 
 const Navbar = () => {
   return (

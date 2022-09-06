@@ -1,5 +1,3 @@
-
-
 const Navbar = () => {
   return (
     <div className="Navbar fixed-top">
@@ -11,8 +9,8 @@ const Navbar = () => {
           <a className="navbar-brand ms-4" href="/">
             Park Maintinance Application
           </a>
-          <div class="navbar-nav me-3" style={{ fontSize: "28px" }}>
-            <a class="nav-link" href="/login">
+          <div className="navbar-nav me-3" style={{ fontSize: "28px" }}>
+            <a className="nav-link" href="/login">
               Login
             </a>
           </div>

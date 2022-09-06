@@ -5,13 +5,13 @@ const Navbar = () => {
     <div className="Navbar fixed-top">
       <nav
         className="navbar navbar-dark"
-        style={{ backgroundColor: "#002F24"}}
+        style={{ backgroundColor: "#002F24" }}
       >
         <div className="container-fluid">
           <a className="navbar-brand ms-4" href="/">
             Park Maintinance Application
           </a>
-          <div class="navbar-nav me-3" style={{fontSize: "28px"}}>
+          <div class="navbar-nav me-3" style={{ fontSize: "28px" }}>
             <a class="nav-link" href="/login">
               Login
             </a>

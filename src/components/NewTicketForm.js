@@ -6,7 +6,15 @@ const NewTicketForm = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+    setError,
+  } = useForm({
+    defaultValues: {
+      name: "",
+      contactNumber: "",
+      parkName: "",
+      issue: "",
+    },
+  });
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -28,7 +36,7 @@ const NewTicketForm = () => {
                 id="Name"
                 aria-describedby="nameHelp"
               />
-              {errors.name?.type === "required" && (
+              {errors.name && (
                 <p style={{ color: "red" }}>Name required</p>
               )}
             </div>
@@ -37,14 +45,12 @@ const NewTicketForm = () => {
                 Contact Number
               </label>
               <input
-                {...register("contactNumber", { required: true })}
-                type="text"
+                {...register("contactNumber", { required: true, minLength: 11, maxLength: 11 })}
+                type="number"
                 className="form-control"
                 id="contactNumber"
               />
-              {errors.contactNumber?.type === "required" && (
-                <p style={{ color: "red" }}>Contact Number required</p>
-              )}
+              {errors.contactNumber && <p style={{color: "red"}}>Please enter a valid UK mobile number</p>}
             </div>
             <div className="mb-3">
               <label for="contactNumber" class="form-label">
@@ -57,8 +63,8 @@ const NewTicketForm = () => {
                 id="contactNumber"
               />
               {errors.parkName?.type === "required" && (
-            <p style={{ color: "red" }}>Park Name required</p>
-          )}
+                <p style={{ color: "red" }}>Park Name required</p>
+              )}
             </div>
             <br />
           </div>
@@ -74,8 +80,8 @@ const NewTicketForm = () => {
               rows="3"
             ></textarea>
             {errors.issue?.type === "required" && (
-            <p style={{ color: "red" }}>Field cannot be empty!</p>
-          )}
+              <p style={{ color: "red" }}>Field cannot be empty!</p>
+            )}
           </div>
           <a
             className="btn btn-danger me-2"

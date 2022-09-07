@@ -5,18 +5,22 @@ import { collection, addDoc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
   contactNumber: yup
     .number()
-    .test("len", (val) => val.toString().length === 11)
+    .test("len", (val) => val.toString().length >= 10 && val.toString().length < 12)
     .required(),
   parkName: yup.string().required(),
   issue: yup.string().required(),
 });
 
 const NewTicketForm = () => {
+
+  const navigate = useNavigate();
+
   const [newParkName, setNewParkName] = useState("");
   const [newIssue, setNewIssue] = useState("");
   const [newName, setNewName] = useState("");
@@ -46,6 +50,9 @@ const NewTicketForm = () => {
   const submitForm = (data) => {
     console.log(data);
     createTicket();
+    alert("Ticket Submission complete.")
+    navigate('/');
+    
   };
 
   return (
@@ -104,7 +111,7 @@ const NewTicketForm = () => {
                   setNewParkName(event.target.value);
                 }}
               />
-              {errors.contactNumber && (
+              {errors.parkName && (
                 <p style={{ color: "red" }}>Please enter park name</p>
               )}
             </div>
@@ -124,7 +131,7 @@ const NewTicketForm = () => {
                 setNewIssue(event.target.value);
               }}
             ></textarea>
-            {errors.contactNumber && (
+            {errors.issue && (
               <p style={{ color: "red" }}>Field cannot be empty!</p>
             )}
           </div>

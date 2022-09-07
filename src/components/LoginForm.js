@@ -1,32 +1,47 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
+
+const schema = yup.object().shape({
+  email: yup.string().email().required(),
+  password: yup.string().required(),
+});
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const {
     register,
-    formState: { errors },
     handleSubmit,
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const submitForm = () => {
+    navigate("/");
+  };
 
   return (
     <div
       className="LoginForm container-fluid d-flex justify-content-center align-items-center"
       style={{ height: "60%" }}
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(submitForm)}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
           </label>
           <input
-            {...register("email", { required: true })}
             type="email"
+            name="email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            {...register("email")}
           />
-          {errors.email && <p style={{color: "red"}}>Please enter a valid email</p>}
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
@@ -36,18 +51,20 @@ const LoginForm = () => {
             Password
           </label>
           <input
-            {...register("password", { required: true })}
             type="password"
+            name="password"
             className="form-control"
             id="exampleInputPassword1"
+            {...register("password")}
           />
-          {errors.password?.type === "required" && (
-            <p style={{ color: "red" }}>Password field cannot be empty!</p>
+          {errors.email && (
+            <p style={{ color: "red" }}>Password or email is incorrect</p>
           )}
         </div>
         <div className="mb-3 form-check">
           <input
             type="checkbox"
+            name="checkbox"
             className="form-check-input"
             id="exampleCheck1"
           />
@@ -55,7 +72,7 @@ const LoginForm = () => {
             Remember me
           </label>
         </div>
-        
+
         <button
           type="submit"
           className="btn btn-primary"
@@ -65,7 +82,9 @@ const LoginForm = () => {
         </button>
         <br />
         <br />
-        <p>Cant log in? contact IT support <a href="/">here</a></p>
+        <p>
+          Cant log in? contact IT support <a href="/">here</a>
+        </p>
       </form>
     </div>
   );

@@ -29,18 +29,21 @@ const Admin = () => {
   const deleteTicket = async (id) => {
     const ticketDoc = doc(db, "ticket-system", id);
     await deleteDoc(ticketDoc);
+    alert("Ticket Deleted");
+    refreshPage();
   };
 
   //Allows us to update the status of a ticket to complete by populatiing a button with each ticket.
-  const updateTicket = async (id, ticketID) => {
-    const ticketDoc = doc(db, "ticket-system", id, ticketID);
-    const newFields = { status: "Complete" };
+  const updateTicket = async (id, status) => {
+    const ticketDoc = doc(db, "ticket-system", id);
+    const newFields = { status: status = "Complete" };
     await updateDoc(ticketDoc, newFields);
+    alert("Ticket marked as complete");
+    refreshPage();
   };
 
   return (
     <div className="Admin text-light" style={{ marginTop: "100px" }}>
-      <h1>Hello there</h1>
       {ticket.map((ticket) => {
         return (
           <div>
@@ -60,8 +63,7 @@ const Admin = () => {
               <button
                 class="btn btn-danger me-2"
                 onClick={() => {
-                  deleteTicket(ticket.ticketID);
-                  refreshPage();
+                  deleteTicket(ticket.id);
                 }}
               >
                 Delete Ticket
@@ -70,8 +72,7 @@ const Admin = () => {
               <button
                 class="btn btn-primary me-2"
                 onClick={() => {
-                  updateTicket(ticket.id, ticket.ticketID);
-                  refreshPage();
+                  updateTicket(ticket.id, ticket.status);
                 }}
               >
                 Complete ticket

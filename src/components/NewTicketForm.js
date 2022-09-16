@@ -35,7 +35,7 @@ const NewTicketForm = () => {
       contactnumber: newContactNumber,
       parkname: newParkName,
       issue: newIssue,
-      status: "In Progress",
+      status: "Awaiting allocation",
     });
   };
 

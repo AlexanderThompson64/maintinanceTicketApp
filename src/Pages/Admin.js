@@ -34,7 +34,7 @@ const Admin = () => {
   };
 
   //Allows us to update the status of a ticket to complete by populatiing a button with each ticket.
-  const updateTicket = async (id, status) => {
+  const completeTicket = async (id, status) => {
     const ticketDoc = doc(db, "ticket-system", id);
     const newFields = { status: status = "Complete" };
     await updateDoc(ticketDoc, newFields);
@@ -42,44 +42,75 @@ const Admin = () => {
     refreshPage();
   };
 
+  const allocateTicket = async (id, status) => {
+    const ticketDoc = doc(db, "ticket-system", id);
+    const newFields = { status: status = "Allocated" };
+    await updateDoc(ticketDoc, newFields);
+    alert("Ticket marked as allocated");
+    refreshPage();
+  };
+
   return (
-    <div className="Admin text-light" style={{ marginTop: "100px" }}>
+    <div className="Admin" style={{ marginTop: "100px", fontFamily: "anak" }}>
+      <div className="container-fluid ">
+      <h1 className="text-white text-center">All Tickets  </h1>
+      <p className="text-white text-center">Please ensure all tickets are updated within the 48 hour SLA</p>
+      </div>
+      
       {ticket.map((ticket) => {
         return (
           <div>
             {" "}
-            <div
-              class="border border-dark rounded p-4 m-4"
-              className="ticketDetails"
-            >
-              <p>Ticket ID: {ticket.ticketID}</p>
-              <p>Name: {ticket.name}</p>
-              <p>Contact Number: {ticket.contactnumber}</p>
-              <p>Park name: {ticket.parkname}</p>
-              <p>Issue: {ticket.issue}</p>
-              <p>Status: {ticket.status}</p>
-            </div>
-            <div className="btnGroup">
-              <button
-                class="btn btn-danger me-2"
-                onClick={() => {
-                  deleteTicket(ticket.id);
-                }}
-              >
-                Delete Ticket
-              </button>
+            <div className="ticketRow row justify-content-center align-items-center p-2">
+              <div
+                className="ticketDetails card card-body border border-dark rounded p-4 m-4 w-25 text-center"
 
-              <button
-                class="btn btn-primary me-2"
-                onClick={() => {
-                  updateTicket(ticket.id, ticket.status);
-                }}
               >
-                Complete ticket
-              </button>
-              <br />
-              <br />
+                
+                <p>Name: {ticket.name}</p>
+                <p>Contact Number: {ticket.contactnumber}</p>
+                <p>Park name: {ticket.parkname}</p>
+                <p>Issue: {ticket.issue}</p>
+                <p>Status: {ticket.status}</p>
+
+                <div className="btnGroup">
+                  <button
+                    class="btn btn-danger me-2"
+                    onClick={() => {
+                      deleteTicket(ticket.id);
+                    }}
+                  >
+                    Delete Ticket
+                  </button>
+                  <button
+                    class="btn btn-warning me-2"
+                    onClick={() => {
+                      allocateTicket(ticket.id, ticket.status);
+                    }}
+                  >
+                    Allocate Ticket
+                  </button>
+                  <br />
+                  <br />
+                  <button
+                    class="btn btn-primary me-2"
+                    onClick={() => {
+                      completeTicket(ticket.id, ticket.status);
+                    }}
+                  >
+                    Complete ticket
+                  </button>
+                 
+                 
+
+                </div>
+              </div>
+              <div className="col-8 d-flex justify-content-center text-white ">
+              <h1>Ticket ID: {ticket.ticketID}</h1>
+              </div>
+                
             </div>
+
           </div>
         );
       })}

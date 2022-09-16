@@ -21,7 +21,7 @@ const LoginForm = () => {
   });
 
   const submitForm = () => {
-    navigate("/");
+    navigate("/admin");
   };
 
   return (

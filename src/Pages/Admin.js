@@ -36,7 +36,7 @@ const Admin = () => {
   //Allows us to update the status of a ticket to complete by populatiing a button with each ticket.
   const completeTicket = async (id, status) => {
     const ticketDoc = doc(db, "ticket-system", id);
-    const newFields = { status: status = "Complete" };
+    const newFields = { status: (status = "Complete") };
     await updateDoc(ticketDoc, newFields);
     alert("Ticket marked as complete");
     refreshPage();
@@ -44,7 +44,7 @@ const Admin = () => {
 
   const allocateTicket = async (id, status) => {
     const ticketDoc = doc(db, "ticket-system", id);
-    const newFields = { status: status = "Allocated" };
+    const newFields = { status: (status = "Allocated") };
     await updateDoc(ticketDoc, newFields);
     alert("Ticket marked as allocated");
     refreshPage();
@@ -53,20 +53,18 @@ const Admin = () => {
   return (
     <div className="Admin" style={{ marginTop: "100px", fontFamily: "anak" }}>
       <div className="container-fluid ">
-      <h1 className="text-white text-center">All Tickets  </h1>
-      <p className="text-white text-center">Please ensure all tickets are updated within the 48 hour SLA</p>
+        <h1 className="text-white text-center">All Tickets </h1>
+        <p className="text-white text-center">
+          Please ensure all tickets are updated within the 48 hour SLA
+        </p>
       </div>
-      
+
       {ticket.map((ticket) => {
         return (
           <div>
             {" "}
             <div className="ticketRow row justify-content-center align-items-center p-2">
-              <div
-                className="ticketDetails card card-body border border-dark rounded p-4 m-4 w-25 text-center"
-
-              >
-                
+              <div className="ticketDetails card card-body border border-dark rounded p-4 m-4 w-25 text-center">
                 <p>Name: {ticket.name}</p>
                 <p>Contact Number: {ticket.contactnumber}</p>
                 <p>Park name: {ticket.parkname}</p>
@@ -100,17 +98,12 @@ const Admin = () => {
                   >
                     Complete ticket
                   </button>
-                 
-                 
-
                 </div>
               </div>
               <div className="col-8 d-flex justify-content-center text-white ">
-              <h1>Ticket ID: {ticket.ticketID}</h1>
+                <h1>Ticket ID: {ticket.ticketID}</h1>
               </div>
-                
             </div>
-
           </div>
         );
       })}

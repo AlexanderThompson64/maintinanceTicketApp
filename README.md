@@ -5,7 +5,7 @@ This is something that you will need to create.
 I have included a code snap of what the file should look like,
 minus the config files which are private to the individual firestore database. 
 
-To get started with this you can sign up for a free account at 
+To get started with this you can sign up for a free account at -
 ## https://firebase.google.com/
 
 <img src="src/img/firebasecodesnap.png" alt="img of code">

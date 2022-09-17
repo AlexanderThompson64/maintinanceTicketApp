@@ -11,7 +11,7 @@ const AdminLogin = () => {
         </h1>
         <p className="lead">
           For maintinance access login here! <br />
-          Cant log in? Contact IT support <a href="/">here</a>
+          Can't log in? Contact IT support <a href="/">here</a>
         </p>
       </div>
       <div className="col-lg-3">

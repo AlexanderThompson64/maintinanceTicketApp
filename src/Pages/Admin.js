@@ -64,7 +64,7 @@ const Admin = () => {
           <div>
             {" "}
             <div className="ticketRow row justify-content-center align-items-center p-2">
-              <div className="ticketDetails card card-body border border-dark rounded p-4 m-4 w-25 text-center">
+              <div className="ticketDetails col-sm-4 col-lg-2 card card-body border border-dark rounded p-4 m-4 text-center">
                 <p>Name: {ticket.name}</p>
                 <p>Contact Number: {ticket.contactnumber}</p>
                 <p>Park name: {ticket.parkname}</p>
@@ -73,15 +73,17 @@ const Admin = () => {
 
                 <div className="btnGroup">
                   <button
-                    class="btn btn-danger me-2"
+                    class="btn btn-danger me-2 w-75"
                     onClick={() => {
                       deleteTicket(ticket.id);
                     }}
                   >
                     Delete Ticket
                   </button>
+                  <br />
+                  <br />
                   <button
-                    class="btn btn-warning me-2"
+                    class="btn btn-warning me-2 w-75"
                     onClick={() => {
                       allocateTicket(ticket.id, ticket.status);
                     }}
@@ -91,7 +93,7 @@ const Admin = () => {
                   <br />
                   <br />
                   <button
-                    class="btn btn-primary me-2"
+                    class="btn btn-primary me-2 w-75"
                     onClick={() => {
                       completeTicket(ticket.id, ticket.status);
                     }}

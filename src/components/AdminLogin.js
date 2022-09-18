@@ -1,3 +1,4 @@
+import AlertMessage from "./AlertMessage";
 
 const AdminLogin = () => {
   return (
@@ -11,7 +12,9 @@ const AdminLogin = () => {
         </h1>
         <p className="lead">
           For maintinance access login here! <br />
-          Can't log in? Contact IT support <a href="/">here</a>
+          Can't log in? Contact IT support <a href=" " onClick={ () => {
+            AlertMessage();
+          }}>here</a>
         </p>
       </div>
       <div className="col-lg-3">

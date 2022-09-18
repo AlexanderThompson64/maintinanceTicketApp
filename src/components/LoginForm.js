@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+import AlertMessage from "./AlertMessage";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -83,7 +84,7 @@ const LoginForm = () => {
         <br />
         <br />
         <p>
-          Cant log in? contact IT support <a href="/">here</a>
+          Cant log in? contact IT support <a href=" " onClick={ () => { AlertMessage() }}>here</a>
         </p>
       </form>
     </div>
